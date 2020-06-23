@@ -25,4 +25,7 @@ app.use(passport.session());
 require("./routes/authRoutes")(app);
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT);
+app.listen(PORT, err => {
+  if (err) throw err;
+  console.log(`> Now serving Express on port ${PORT}`);
+});
