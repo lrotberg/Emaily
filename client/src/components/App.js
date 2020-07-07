@@ -4,9 +4,7 @@ import { connect } from "react-redux";
 
 import * as actions from "../actions";
 import Header from "./Header";
-
-const Bla = () => <h1>HI!!!</h1>;
-const Users = () => <h1>Users</h1>;
+import Landing from "./Landing";
 
 class App extends Component {
   componentDidMount() {
@@ -18,8 +16,8 @@ class App extends Component {
       <div className="container">
         <Header />
         <Switch>
-          <Route exact path="/" component={Bla} />
-          <Route exact path="/users" component={Users} />
+          <Route exact path="/" component={Landing} />
+          {/* <Route exact path="/users" component={Users} /> */}
         </Switch>
       </div>
     );
