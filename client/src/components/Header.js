@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import Payments from "./Payments";
+
+const mapStateToProps = ({ auth }) => ({ auth });
 
 const renderContent = auth => {
   switch (auth) {
@@ -14,9 +17,14 @@ const renderContent = auth => {
       );
     default:
       return (
-        <li>
-          <a href="/api/logout">Logout</a>
-        </li>
+        <>
+          <li>
+            <Payments />
+          </li>
+          <li>
+            <a href="/api/logout">Logout</a>
+          </li>
+        </>
       );
   }
 };
@@ -31,7 +39,5 @@ const Header = props => (
     </div>
   </nav>
 );
-
-const mapStateToProps = ({ auth }) => ({ auth });
 
 export default connect(mapStateToProps)(Header);
