@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 import Header from "./Header";
 import Landing from "./Landing";
+import Dashboard from "./Dashboard";
 
 const App = props => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const App = props => {
       <Header />
       <Switch>
         <Route exact path="/" component={Landing} />
-        {/* <Route exact path="/users" component={Users} /> */}
+        <Route exact path="/surveys" component={Dashboard} />
       </Switch>
     </div>
   );
