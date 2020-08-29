@@ -6,11 +6,17 @@ import * as actions from "../actions";
 import Header from "./Header";
 import Landing from "./Landing";
 import Dashboard from "./Dashboard";
+import SurveyNew from "./surveys/SurveyNew";
 
-const App = props => {
+const App = ({ fetchUser }) => {
+  // const fetchUser = () => {
+  //   props.fetchUser();
+  // };
+  // useEffect(fetchUser, []);
+
   useEffect(() => {
-    props.fetchUser();
-  }, []);
+    fetchUser();
+  }, [fetchUser]);
 
   return (
     <div className="container">
@@ -18,6 +24,7 @@ const App = props => {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/surveys" component={Dashboard} />
+        <Route exact path="/surveys/new" component={SurveyNew} />
       </Switch>
     </div>
   );
